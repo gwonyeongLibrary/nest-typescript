@@ -67,3 +67,38 @@ function identity<T>(arg: T): T {
 // 함수가 number값이라면 return으로 넘겨주는 값도 number타입이여야 하는 것.
 
 identity(10);
+
+// -----------------
+// alias type
+
+type Player = {
+    name: string;
+    age?: number;
+};
+
+const jo: Player = {
+    name: "gwonyeong"
+};
+
+const gwon: Player = {
+    name: "jo",
+    age: 25
+};
+
+// readonly : 말 그대로 읽기 전용
+//
+
+type PlayerRead = {
+    readonly name: string;
+    age?: number;
+};
+const player: PlayerRead = {
+    name: "권영"
+};
+// player.name = 'hi' 같은 식으로 작성하면 readonly타입이기 때문에 변경할 수 없다고 에러를 발생시킴!
+
+const numbers: readonly number[] = [1, 2, 3, 4];
+// numbers.push() Error!
+
+// tuple
+const playerTup: [string, number, boolean] = ["jo", 1, true]; // 정해진 갯수의 정해진 요소를 가지는 타입
