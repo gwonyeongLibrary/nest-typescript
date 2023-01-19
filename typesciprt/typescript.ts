@@ -102,3 +102,13 @@ const numbers: readonly number[] = [1, 2, 3, 4];
 
 // tuple
 const playerTup: [string, number, boolean] = ["jo", 1, true]; // 정해진 갯수의 정해진 요소를 가지는 타입
+
+// ----------------------
+function add(a: number, b: number) {
+    return a + b;
+}
+
+const add_arrow = (a: number, b: number) => a + b; //이 함수에 타입을 작성하지 않았음에도 함수의 반환값이 number라고 이야기 해주고 있음.
+
+type Add_type = (a: number, b: number) => number;
+// call signature
